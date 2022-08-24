@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="css/libs.min.css">
+  <link rel="stylesheet" href="css/style.min.css">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+</head>
+
+<body>
+
+  <div class="wrapper">
+    
+    @include('html-parts/header.html')
+
+    
+    <div class="mob-menu" data-menu>
+      <div class="mob-menu__body" data-menu-body>
+        <button class="mob-menu__close" data-menu-close>
+          <img src="" alt="" />
+        </button>
+        <nav class="mob-menu__nav">
+          <ul class="mob-menu__list">
+            <li class="mob-menu__item">
+              <a href="#capabilities" class="mob-menu__link" data-menu-link>Возможности </a>
+            </li>
+            <li class="mob-menu__item">
+              <a href="#technology" class="mob-menu__link" data-menu-link>Технология</a>
+            </li>
+            <li class="mob-menu__item">
+              <a href="#partners" class="mob-menu__link" data-menu-link>Партнерская сеть</a>
+            </li>
+            <li class="mob-menu__item">
+              <a href="#clients" class="mob-menu__link" data-menu-link>Клиенты</a>
+            </li>
+            <li class="mob-menu__item">
+              <a href="#contact" class="mob-menu__link" data-menu-link>Контакты</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+
+
+    <main class="main"></main>
+
+    @include('html-parts/footer.html')
+    
+  </div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="js/libs.min.js"></script>
+  <script src="js/main.min.js"></script>
+</body>
+
+</html>
