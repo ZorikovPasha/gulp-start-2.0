@@ -6,4 +6,8 @@ $(function() {
   sliders()
   mobile()
   popups()
+
+  new WOW().init();
+
+  $('[data-phone]').inputmask({ mask: "+7(999) 999-99-99" })
 })

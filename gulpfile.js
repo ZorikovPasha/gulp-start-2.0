@@ -46,7 +46,6 @@ const jsLibsMinify = () => {
     // 'node_modules/dotdotdot-js/dist/dotdotdot.js',
     'node_modules/wowjs/dist/wow.min.js',
     'node_modules/jquery-validation/dist/jquery.validate.min.js'
-
   ])
     .pipe(concat('libs.min.js'))
     .pipe(uglify())
@@ -58,13 +57,11 @@ const jsLibsMinify = () => {
 
 const sassConvert = () => {
   return src('#src/scss/**/*')
-      .pipe(sass( {outputStyle: "compressed"} ))
-      .pipe(rename({suffix: ".min"}))
-      .pipe(autoprefixer({
-        overrideBrowserslist: ['last 8 versions']
-      }))
+      .pipe(sass({ outputStyle: "compressed" }))
+      .pipe(rename({ suffix: ".min" }))
+      .pipe(autoprefixer({ overrideBrowserslist: ['last 8 versions'] }))
       .pipe(dest('dist/css'))
-      .pipe(browsersync.reload( {stream: true} ))
+      .pipe(browsersync.reload({ stream: true }))
 }
 
 // обновление js файла, его сжатие и передача его в папку проекта 
@@ -74,15 +71,15 @@ const minifyJS = function() {
     entries: '#src/js/main.js', 
     debug: true
   })
-  .transform(babelify, {presets: ['@babel/env'], sourceMaps: true})
+  .transform(babelify, { presets: ['@babel/env'], sourceMaps: true })
   .bundle()
     .pipe(source('bundle.js'))
     .pipe(buffer())
-    .pipe(sourcemaps.init({loadMaps: true}))
+    .pipe(sourcemaps.init({ loadMaps: true }))
     .pipe(uglify())
     .pipe(sourcemaps.write('./'))
     .pipe(dest('./dist/js/'))
-    .pipe(browsersync.reload( {stream: true} ))
+    .pipe(browsersync.reload({ stream: true }))
 }
 
 const imageMin = () => {
